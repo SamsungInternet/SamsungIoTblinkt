@@ -2,7 +2,6 @@
  * Created by nherriot on 07/07/18.
  */
 
-//var Blinkt = require("Blinkt");
 var Blinkt = require("node-blinkt");
 // Create a blinkt object and set the lights onto a known OFF state
 leds = new Blinkt();
