@@ -1,5 +1,9 @@
 /**
  * Created by nherriot on 07/07/18.
+ *
+ * A simple light which goes on and off every 5 seconds.
+ * To run:    /> node on-off.js
+ *
  */
 
 var Blinkt = require("node-blinkt");
