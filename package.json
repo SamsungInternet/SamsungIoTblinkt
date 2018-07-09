@@ -1,5 +1,5 @@
 {
-  "name": "samsungiotblinkt webthing",
+  "name": "samsungiotblinkt",
   "version": "1.0.0",
   "description": "A blinkt controller which sets itself as an WoT device",
   "main": "index.js",
