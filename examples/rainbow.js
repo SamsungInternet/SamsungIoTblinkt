@@ -1,5 +1,9 @@
 /**
  * Created by nherriot on 07/07/18.
+ *
+ * A simple light which shows a moving rainbow of colour.
+ * To run:    /> node rainbow.js
+ *
  */
 
 var convert = require('color-convert');
