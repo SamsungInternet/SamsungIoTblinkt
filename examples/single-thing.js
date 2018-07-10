@@ -21,7 +21,7 @@ const uuidv4 = require('uuid/v4');
 
 
 function switchOnOff(state) {
-	console.log('Switching lights' + state);
+	console.log('Switching lights: ' + state);
 	if (state){
 		leds.setAllPixels(255, 255, 255, 1);
 	} else {
