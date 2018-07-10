@@ -1,0 +1,16 @@
+[Unit]
+ Description=Samsung POC Rainbow Light Service
+ After=multi-user.target
+
+[Service]
+ Type=idle
+ WorkingDirectory=/home/pi/samsung/SamsungIoTblinkt
+ ExecStart=/usr/bin/node /home/pi/samsung/SamsungIoTblinkt/app.js >> /home/pi/samsung/rainbow-light-manager.log 2>&1
+ RestartSec=30
+ Restart=on-failure
+ StandardOutput=/home/pi/samsung/rainbowLight.log
+ StandardError=/home/pi/samsung/rainbowLightError.log
+
+
+[Install]
+ WantedBy=multi-user.target

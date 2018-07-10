@@ -1,3 +1,7 @@
+/**
+ * Created by nherriot on 10/07/18.
+ */
+
 
 var Blinkt = require("node-blinkt");
 // Create a blinkt object and set the lights onto a known OFF state
@@ -16,12 +20,22 @@ const {
   Thing,
   Value,
   WebThingServer,
-} = require('../index');
+} = require('./index');
 const uuidv4 = require('uuid/v4');
 
 
+
+
+  /**
+   * Switch the whole light on or off.
+   *
+   * @param {boolean} If the state is true all pixels are turned on.
+   *                  If the state is false all pixels are turned off.
+   *
+   * @returns {*} Current property value if found, else null
+   */
 function switchOnOff(state) {
-	console.log('Switching lights' + state);
+	console.log('Switching lights: ' + state);
 	if (state){
 		leds.setAllPixels(255, 255, 255, 1);
 	} else {
@@ -71,15 +85,15 @@ function makeThing() {
   thing.addProperty(
     new Property(thing,
                  'brightness',
-                 new Value(50, () => {}),
+                 new Value(10, (result) => {console.log('Brightness Property has been set to: ' + result)}),
                  {
                    '@type': 'BrightnessProperty',
                    label: 'Brightness',
                    type: 'number',
-                   description: 'The level of light from 0-100',
+                   description: 'The level of light from 0-10',
                    minimum: 0,
-                   maximum: 100,
-                   unit: 'percent',
+                   maximum: 10,
+                   unit: 'intensity',
                  }));
 
   thing.addAvailableAction(
@@ -97,8 +111,8 @@ function makeThing() {
           brightness: {
             type: 'number',
             minimum: 0,
-            maximum: 100,
-            unit: 'percent',
+            maximum: 10,
+            unit: 'intensity',
           },
           duration: {
             type: 'number',
@@ -132,7 +146,7 @@ function runServer() {
     server.stop();
     process.exit();
   });
-
+  console.log('*** Starting Rainbow Light Service ***');
   server.start();
 }
 
