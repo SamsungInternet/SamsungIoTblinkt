@@ -1,3 +1,13 @@
+
+var Blinkt = require("node-blinkt");
+// Create a blinkt object and set the lights onto a known OFF state
+leds = new Blinkt();
+leds.setup();
+leds.clearAll();
+leds.sendUpdate();
+let onOff = false;							// A variable to set when a light is on or off
+
+
 const {
   Action,
   Event,
@@ -8,6 +18,18 @@ const {
   WebThingServer,
 } = require('../index');
 const uuidv4 = require('uuid/v4');
+
+
+function switchOnOff(state) {
+	console.log('Switching lights: ' + state);
+	if (state){
+		leds.setAllPixels(255, 255, 255, 1);
+	} else {
+		leds.clearAll();
+	}
+	leds.sendUpdate();
+}
+
 
 class OverheatedEvent extends Event {
   constructor(thing, data) {
@@ -39,7 +61,7 @@ function makeThing() {
   thing.addProperty(
     new Property(thing,
                  'on',
-                 new Value(true, () => {console.log('***** Light switched *****')}),
+                 new Value(true, (result) => {switchOnOff(result)}),
                  {
                    '@type': 'OnOffProperty',
                    label: 'On/Off',
