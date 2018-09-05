@@ -24,16 +24,42 @@ const {
 const uuidv4 = require('uuid/v4');
 
 
+/**
+ * Dim the whole light to a set value.
+ *
+ * @param {int} The integer is 0 to 10 where 0 is off and 10 is max.
+ *                  The light understands between 0 and 1 so we need
+ *                  to translate the value.
+ *
+ */
+function setBrightness(brightness) {
+  // TODO Check number validity in a helper function
+  if (typeof brightness !=='undefined' && brightness !== null && brightness != NaN) {
+
+    var lightBrightness = (Math.round(brightness)/10);     // Round the number to an int value and convert to a num of 0 - 1
+    console.log('Intensity set to: ' + brightness);
+
+    // Check the value of the brightness value first
+    if (lightBrightness<=1 && lightBrightness>=0) {
+      console.log("value within limits");
+      leds.setAllPixels(255, 255, 255, lightBrightness);
+      leds.sendUpdate();
+    } else {
+      console.log("bad value - do nothing");
+    }
+  }
+}
 
 
-  /**
-   * Switch the whole light on or off.
-   *
-   * @param {boolean} If the state is true all pixels are turned on.
-   *                  If the state is false all pixels are turned off.
-   *
-   * @returns {*} Current property value if found, else null
-   */
+
+
+/**
+ * Switch the whole light on or off.
+ *
+ * @param {boolean} If the state is true all pixels are turned on.
+ *                  If the state is false all pixels are turned off.
+ *
+ */
 function switchOnOff(state) {
 	console.log('Switching lights: ' + state);
 	if (state){
@@ -85,6 +111,7 @@ function makeThing() {
   thing.addProperty(
     new Property(thing,
                  'brightness',
+                 // Change me to set brightness
                  new Value(10, (result) => {console.log('Brightness Property has been set to: ' + result)}),
                  {
                    '@type': 'BrightnessProperty',
