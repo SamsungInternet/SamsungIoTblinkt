@@ -67,6 +67,7 @@ class FadeAction extends Action {
   }
 }
 
+
 function makeThing() {
   const thing = new Thing('Rainbow Lamp',
                           ['OnOffSwitch', 'Light'],
@@ -85,7 +86,8 @@ function makeThing() {
   thing.addProperty(
     new Property(thing,
                  'brightness',
-                 new Value(10, (result) => {console.log('Brightness Property has been set to: ' + result)}),
+                 // Change me to set brightness
+                 new Value(10, (result) => {console.log('Brightness Property has been set     to: ' + result)}),
                  {
                    '@type': 'BrightnessProperty',
                    label: 'Brightness',
