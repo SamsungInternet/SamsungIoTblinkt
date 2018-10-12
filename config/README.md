@@ -52,9 +52,11 @@ on and look at port 8888. e.g. If our server is running on 192.168.1.100 then in
 
 You should see the JSON output like:
 
+
+
     {
 
-    "name": "Rainbow Lamp",
+    "name": "Blinkt Light",
     "href": "/",
     "@context": "https://iot.mozilla.org/schemas",
     "@type": [
@@ -66,7 +68,7 @@ You should see the JSON output like:
             "@type": "OnOffProperty",
             "label": "On/Off",
             "type": "boolean",
-            "description": "Whether the lamp is turned on",
+            "description": "Whether the light is turned on",
             "href": "/properties/on"
         },
         "brightness": {
@@ -130,11 +132,10 @@ You should see the JSON output like:
         },
         {
             "rel": "alternate",
-            "href": "ws://192.168.110.99:8888"
+            "href": "ws://192.168.110.251:8080"
         }
     ],
     "description": "A web connected lamp"
 
     }
-
 
