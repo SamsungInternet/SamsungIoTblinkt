@@ -7,18 +7,18 @@ https://www.linux.com/learn/understanding-and-using-systemd
 The Samsung POC Rainbow Light has a service configuration script which can be used to setup your system to do this. Follow the installation and setup steps below.
 
 ## Copy Your Service Profile
-You need to copy the service profile script to the /etc/systemd/system dir as an admin (root) user:
+You need to copy the service profile script to the /etc/systemd/system dir as an admin (root) user type in a terminal:
 
      /> sudo cp config/samsung-rainbow-light.service /etc/systemd/system/
      
 ## Enable Your New Service
-Once the new service profile is copied into the 'unit' systemd directory you need to set permissions on the file and enable it. To do this do:
+Once the new service profile is copied into the 'unit' systemd directory you need to set permissions on the file and enable it. To do this do type in a terminal:
 
      /> sudo chmod 664 /etc/systemd/system/samsung-rainbow-light.service
      /> systemctl daemon-reload
 
 ## Start Your New Bluetooth WiFi Manager Service
-You can now start the service from the command line and check it's working. To Start the service do:
+You can now start the service from the command line and check it's working. To Start the service type in a terminal:
 
      /> pi@raspberrypi:/etc/systemd/system $ sudo service samsung-rainbow-light status
      ● samsung-rainbow-light.service - Samsung POC Rainbow Light Service
@@ -29,11 +29,11 @@ You can now start the service from the command line and check it's working. To S
              └─2876 /usr/bin/node /home/pi/samsung/SamsungIoTblinkt/app.js >> /home/pi/samsung/rainbow-light-manager.log 2>&1
 
 
-To Start the service you can do:
+To Start the service you can do this in your terminal window:
 
      /> sudo service samsung-rainbow-light start
      
-Simply check the status again to see that it's running:
+Simply check the status again to see that it's running with the following command:
 
 		pi@raspberrypi:/etc/systemd/system $ sudo service samsung-rainbow-light status
 		● samsung-rainbow-light.service - Samsung POC Rainbow Light Service
