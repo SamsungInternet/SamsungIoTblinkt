@@ -29,23 +29,25 @@ On a fresh Rasbian Stretch image do:
 ### Testing The Program From Command Line
 Before running the application, which will register the device with the Mozilla WoT Gateway you can test out your LED lights on the Blinkt by running the example programs created in the example directory. Go to the sub directory by typing in your terminal:
 
-    ``` /> cd ~/samsung/SamsungIoTblinkt/examples:```
+    /> cd ~/samsung/SamsungIoTblinkt/examples:
 
 Here you can find a number of programs to test your blinkt lights. To switch them on and off you can do in your terminal:
 
-    ```
     pi@raspberrypi:~/samsung/SamsungIoTblinkt/examples $ node on-off.js 
     Switching on all lights
     *** Switching Lights On ***
     Switching on all lights
-    *** Switching Lights Off ***```
+    *** Switching Lights Off ***
 
 Feel free to try the other programs out.
 
 ### Starting The Program From Command Line
 To start the bluetooth wifi manager go to the root of your SamsungIoTblinkt directory and start the app using node:
 
-    ```/> node app.js```
+    /> node app.js
     
 Now go to your Mozilla Gatway and search for a new 'Thing' to add. You should find a new Mozilla WoT can be added and controlled.
 
+
+### Starting As A Service
+You can start the blinkt light as a linux systemd service. To find out how [navigate here](https://github.com/nherriot/SamsungIoTblinkt/tree/master/config)
