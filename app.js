@@ -94,7 +94,7 @@ class FadeAction extends Action {
 }
 
 function makeThing() {
-  const thing = new Thing('Rainbow Lamp',
+  const thing = new Thing('Blinkt Light',
                           ['OnOffSwitch', 'Light'],
                           'A web connected lamp');
 
@@ -106,7 +106,7 @@ function makeThing() {
                    '@type': 'OnOffProperty',
                    label: 'On/Off',
                    type: 'boolean',
-                   description: 'Whether the lamp is turned on',
+                   description: 'Whether the light is turned on',
                  }));
   thing.addProperty(
     new Property(thing,
@@ -172,7 +172,7 @@ function runServer() {
     server.stop();
     process.exit();
   });
-  console.log('*** Starting Rainbow Light Service ***');
+  console.log('*** Starting Blinkt Light Service ***');
   server.start();
 }
 
