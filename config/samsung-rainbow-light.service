@@ -6,7 +6,7 @@
  Type=idle
  WorkingDirectory=/home/pi/samsung/SamsungIoTblinkt
  ExecStart=/usr/bin/node /home/pi/samsung/SamsungIoTblinkt/app.js >> /home/pi/samsung/rainbow-light-manager.log 2>&1
- RestartSec=30
+ RestartSec=10
  Restart=on-failure
  StandardOutput=syslog
  SyslogIdentifier=samsung_wot_light
