@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nherriot/SamsungIoTblinkt.git"
+    "url": "git+https://github.com/SamsungInternet/SamsungIoTblinkt.git"
   },
   "author": "Nicholas Herriot",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/nherriot/SamsungIoTblinkt/issues"
+    "url": "https://github.com/SamsungInternet/SamsungIoTblinkt/issues"
   },
-  "homepage": "https://github.com/nherriot/SamsungIoTblinkt#readme"
+  "homepage": "https://github.com/SamsungInternet/SamsungIoTblinkt#readme"
 }
